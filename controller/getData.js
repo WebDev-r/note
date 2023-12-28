@@ -7,6 +7,6 @@ async function getPost(req,resp) {
     const db = client.db('note');
     let collection=db.collection('myNotes')
     console.log("database connected")
-    resp.json(await collection.find({}));
+    resp.json(await collection.find({}).toArray());
   }
 module.exports=getPost;
